@@ -61,17 +61,6 @@ class TetrisEnv(gym.Env):
                 self.viewer = rendering.SimpleImageViewer()
             self.viewer.imshow(img)
 
-class RandomAgent(object):
-    def __init__(self, action_space):
-        self.action_space = action_space
-
-    def act(self, observation, reward, done):
-        return self.action_space.sample()
-
-if __name__ == '__main__':
-    from spinup import ppo_tf1 as ppo
-    env = TetrisEnv()
-    agent = RandomAgent(env.action_space)
 
     # episode_count = 100
     # max_steps = 200
